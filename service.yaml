@@ -1,0 +1,11 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: my-gitops-route
+  namespace: ouchi-cicd-env
+spec:
+  to:
+    kind: Service
+    name: my-gitops-service
+  port:
+    targetPort: 8080
