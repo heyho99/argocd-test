@@ -1,11 +1,10 @@
-apiVersion: route.openshift.io/v1
-kind: Route
+apiVersion: v1
+kind: Service
 metadata:
-  name: my-gitops-route
-  namespace: ouchi-cicd-env
+  name: my-gitops-service
 spec:
-  to:
-    kind: Service
-    name: my-gitops-service
-  port:
-    targetPort: 80
+  selector:
+    app: my-gitops-app
+  ports:
+    - port: 8080         # ① Service自身の受付ポート
+      targetPort: 80   # ② Pod（Nginx）へ渡すポート
