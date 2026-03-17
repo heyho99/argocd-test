@@ -8,4 +8,4 @@ spec:
     kind: Service
     name: my-gitops-service
   port:
-    targetPort: 8080
+    targetPort: 80
