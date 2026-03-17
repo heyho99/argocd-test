@@ -7,4 +7,4 @@ spec:
     app: my-gitops-app
   ports:
     - port: 8080         # ① Service自身の受付ポート
-      targetPort: 80   # ② Pod（Nginx）へ渡すポート
+      targetPort: 8080   # ② Pod（Nginx）へ渡すポート

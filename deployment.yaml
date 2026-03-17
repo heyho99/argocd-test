@@ -24,4 +24,4 @@ spec:
           # 修正①：root不要のNginxイメージに変更
           image: nginxinc/nginx-unprivileged:alpine  # URL省略時は docker.io/library/ が補完される
           ports:
-            - containerPort: 80
+            - containerPort: 8080  # nginx-unprivilegedは8080で待機
