@@ -15,13 +15,6 @@ spec:
     spec:
       containers:
         - name: web
-          image: nginx:alpine
+          image: nginxinc/nginx-unprivileged:alpine
           ports:
-            - containerPort: 80
-    # spec:
-    #   containers:
-    #     - name: web
-    #       # 修正①：root不要のNginxイメージに変更
-    #       image: nginxinc/nginx-unprivileged:alpine  # URL省略時は docker.io/library/ が補完される
-    #       ports:
-    #         - containerPort: 8080  # nginx-unprivilegedは8080で待機
+            - containerPort: 8080
