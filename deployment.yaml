@@ -12,16 +12,16 @@ spec:
     metadata:
       labels:
         app: my-gitops-app
-    # spec:
-    #   containers:
-    #     - name: web
-    #       image: nginx:alpine
-    #       ports:
-    #         - containerPort: 80
     spec:
       containers:
         - name: web
-          # 修正①：root不要のNginxイメージに変更
-          image: nginxinc/nginx-unprivileged:alpine  # URL省略時は docker.io/library/ が補完される
+          image: nginx:alpine
           ports:
-            - containerPort: 8080  # nginx-unprivilegedは8080で待機
+            - containerPort: 80
+    # spec:
+    #   containers:
+    #     - name: web
+    #       # 修正①：root不要のNginxイメージに変更
+    #       image: nginxinc/nginx-unprivileged:alpine  # URL省略時は docker.io/library/ が補完される
+    #       ports:
+    #         - containerPort: 8080  # nginx-unprivilegedは8080で待機
